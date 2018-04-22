@@ -46,6 +46,7 @@ if cat /etc/*release | grep ^NAME | grep CentOS; then
     yum -y install $yum_packages
     systemctl disable firewalld & systemctl stop firewalld
 elif cat /etc/*release | grep ^NAME | grep Ubuntu; then
+    apt-get update
     apt-get install -y $deb_packages
     ufw disable
 else
